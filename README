@@ -1,8 +1,7 @@
 -----------------------------------------------------------------------------------------------------
 
-Name: Chanpreet Singh and Gurbani Baweja
-CMPUT 275 - Tangible Compting - Winter 2019
-Final Project :- Morse Code Communication using Diffi-Helman Scheme
+Author: Gurbani Baweja
+Morse Code Communication using Diffi-Helman Scheme
 
 ------------------------------------------------------------------------------------------------------
 => Included Files:
@@ -46,14 +45,9 @@ In this program we start by initializing the key exchange protocol using the Dif
 
 After keys are computed correctly, we start the arduinos with a welcome message. Now the server go into message enter mode and client is in decryption mode which wait for server to send encrypted information. Server,wait for user to enter the message using morse codes and timing set for morse codes are as follow, for a dot- dot<200 ms, for a dash- 200<dash<600 ms, end of character code - 600<charater end<<1000 ms and for a space- 1000>space. When user give instruction for a end of charater by pressing button for more then 600ms and less then 1000ms, we get to know that complete morse code for a letter is entered and now we find the match for that dot-dash pattern in database and get the character. We allow user to enter message as long as he want with no maximum restriction unless momory is full in arduino. When user click on the send buttor we change state to the encryption and the add encryption key wiht each character ascii value and send it to the serial mon 3. We add a ! in end of string to know that message string is encrypted fully. We also send ! after encoding on the serial mon 3 so the client could know that whole message is rescieved. Now the client which was on decryption mode take information from serial and we subtract the encryption key to get the original ascii and we decode entire message in this way. We use add/subtract since the key is going to be unique with no bounds so to avoid overflow we decided to go with add/sub rather then mult/div. Now we use database and find the dot-dash pattern for each letter and display it on screen with the dot-dash pattern sound. Giving a real decoding of morse code feeling. Now we allow client to enter message and send it to server. In this way we enable a two way communication.
 
-Disclaimer:
------------
- Few functions in this program are used from CMPUT 274 and they are cited in the code file near the header.
 
-Team Participation: 
------------------
-Chanpreet Singh: Diffi-helman scheme and key exchange. All the states in ExchangeState are created by Chanpreet .
-Gurbani Baweja: morse code to charater and ecryption-decrytion from serial mon 3. All the states in ProgramStates are done by Gurbani.
+
+
 
 
 
